@@ -2,8 +2,10 @@
     <div class='main-container'>
         <page-header></page-header>
         <div class='container'>
-            <transition name="slide-slip">
-                <router-view ></router-view>
+            <transition name="fade" mode='out-in'>
+                <keep-alive>
+                    <router-view ></router-view>
+                </keep-alive>
             </transition>
         </div>
     </div>
@@ -30,5 +32,18 @@ export default {
     .container{
         height: calc(100% - 150px);
     }
+}
+.fade-enter{
+    opacity: 0;
+}
+.fade-leave{
+    opacity: 1;
+}
+.fade-enter-active{
+    transition: opacity 0.5s;;
+}
+.fade-leave-active{
+    opacity: 0;
+    transition: opacity 0.5s;;
 }
 </style>
