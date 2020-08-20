@@ -4,6 +4,7 @@ import Login from '@/page/login/index'
 import Index from '@/page/index'
 import Welcome from '@/page/welcome/index'
 import Poetry from './poetry'
+import MessageBoard from '@/page/messageBoard/message'
 Vue.use(Router)
 
 export default new Router({
@@ -42,6 +43,15 @@ export default new Router({
         hidden: true
       }},
       Poetry,
+      {
+        path: 'messageBoard',
+        name: 'MessageBoard',
+        component: MessageBoard,
+        meta:{
+          requiresAuth: true,
+          name: '留言',
+          hidden: false
+      }},
     ]
    },
   ]

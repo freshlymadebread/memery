@@ -14,5 +14,11 @@ export default {
         _getAccount(){
             return SessionStorage.get('account')
         },
+        _getTime(value, format = 'yyyy-MM-dd hh:mm:ss') {
+            if(!value) {
+                return '-'
+            }
+            return TimeUtils.timestampToTime(value, format) 
+        },
     }
 }

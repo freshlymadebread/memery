@@ -17,7 +17,14 @@ export default {
   data () {
     return {
       routes: this.$router.options.routes,
-      activeMenu: 'Index',
+      activeMenu: undefined,
+    }
+  },
+  watch:{
+    '$route'(to, from){
+      console.log('123123')
+      console.log(to)
+      this.activeMenu = to.name
     }
   },
   computed: {
@@ -46,6 +53,7 @@ export default {
       }
   },
   mounted () {
+    this.activeMenu = this.$route.name
   },
   methods: {
     choseMenu(menu){
@@ -71,7 +79,8 @@ export default {
   width: 100%;
   height: 150px;
   background: transparent;
-  .menu-item{
+  .menu-item{    
+    z-index: 999;
     margin: 50px;
     user-select: none;
     cursor: pointer;
