@@ -59,7 +59,7 @@ module.exports = {
     assetsPublicPath: '/index/',
 
     proxyTable: {
-      '/': {
+      '': {
         target: 'http://123.56.56.250:3000',
         changeOrigin: true
       }

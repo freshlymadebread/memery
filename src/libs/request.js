@@ -16,7 +16,7 @@ axios.interceptors.response.use(function (response) {
 
 const Request = function (options) {
     return new Promise((resolve, reject) => {
-        let headerUrl = ''
+        let headerUrl = 'http://123.56.56.250:3000'
         let axiosParams = {
             url: headerUrl + options.url,
             method: options.method,
