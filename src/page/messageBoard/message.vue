@@ -3,7 +3,7 @@
         <div class='board'>
             <div class='container'>
                 <div v-for='(item, index) in messageList' :key="'paper' + index" class='tray'>
-                    <div :class="'message ' + item.class" @click='checkMessage(item)' :style="message === item ?'opacity:0;':''">
+                    <div :class="'message ' + item.class" @click='checkMessage(item)' :style="(message === item ?'opacity:0;':'') + 'transform: rotate('+item.deg +'deg);'">
                         <div class='text-content'>
                         <p class='text' v-html="item.text"></p>
                         <p class='info'>于{{_getTime(new Date(item.date).valueOf(),'yyyy年MM月dd日')}}</p>
@@ -52,9 +52,11 @@ export default {
             }).then(resp=>{
                 let list = resp.data.messageList.map(item => {
                     let random = Math.ceil(Math.random()*5)
+                    let deg = Math.ceil(Math.random()*20) -10
                     return {
                         ...item,
-                        class: 'paper' + random 
+                        class: 'paper' + random ,
+                        deg,
                     }
                 })
                 if(list.length > 11){
@@ -99,7 +101,6 @@ export default {
                     height: 200px;
                     transition: all 1s;
                     font-size: 14px;
-                    transform: rotate(-5deg);
                     text-align: left;
                     .text-content{
                         user-select: none;

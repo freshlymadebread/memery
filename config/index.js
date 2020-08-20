@@ -13,6 +13,7 @@ module.exports = {
     proxyTable: {
       '/': {
         target: 'http://localhost:3000',
+        // target: 'http://123.56.56.250:3000',
         changeOrigin: true
       }
     },
