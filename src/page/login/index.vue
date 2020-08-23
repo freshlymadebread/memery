@@ -11,7 +11,7 @@
             </p>
             <p class='para'>
                 <span>
-                    欢迎来到福林子与颖颖子的专属地盘！
+                    欢迎来到fulin与里溜溜赢的专属地盘！
                 </span>
             </p>
             <p class='para'>
@@ -34,7 +34,7 @@ export default {
     name: 'Login',
     data(){
         return {
-            name: '游客',
+            name: '',
             spotList: [],
             timer: undefined,
         }
@@ -60,11 +60,15 @@ export default {
             },2000)
         },
         entry(){
+            if(!this.name){
+                this.$message.warning('给自己起一个好听的名字吧！')
+                return
+            }
             Request({
                 url: '/entry',
                 method: 'get',
                 params:{
-                    name:encodeURI(encodeURI(this.name))
+                    name:(this.name)
                 }
             })
             SessionStorage.set('account',this.name)

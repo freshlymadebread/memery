@@ -8,7 +8,7 @@ export default
   component: Poetry,
   meta:{
     requiresAuth: true,
-    name:' 诗歌'
+    name:' 小诗'
   },
   children:[
   ]

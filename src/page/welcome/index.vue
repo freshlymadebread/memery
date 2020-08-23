@@ -5,10 +5,10 @@
             你好啊，{{name}}!{{name=='游客'?'你没有修改名字，很多权限都没有哦！去写个名字吧~': ''}}
         </p>
         <p class='content'>
-            知道这儿的人真不多！你能来这儿说明你是他们两个很好的朋友了！
+            说真的，你这名字真好听！
         </p>
         <p class='content'>
-            哦！你说他们俩啊，就是福林和刘颖子啦！
+            知道这儿的人真不多！你能来这儿说明你是他们两个很好的朋友了！
         </p>
         <p class='content' v-if='time'>
             对啦！他们俩在一起{{time}}啦！
@@ -16,11 +16,11 @@
     </div>
     <div class='tips'>
         <div class='contanier'>
-            <el-input class='my-input' :disabled="isStranger" resize='none' :autosize="{ minRows: 4, maxRows: 4}" type="textarea"  :placeholder="isStranger?'游客请勿触碰！':'在这里写下祝福或者留言建议！福林儿筛选后会放到展示栏，到只能写30个字哦！'"  v-model="text"  maxlength="30"  show-word-limit></el-input>
+            <el-input class='my-input' :disabled="isStranger" resize='none' :autosize="{ minRows: 4, maxRows: 4}" type="textarea"  :placeholder="isStranger?'游客请勿触碰！':'在这里写下祝福或者留言建议！然后贴到留言墙，到只能写30个字哦！'"  v-model="text"  maxlength="30"  show-word-limit></el-input>
         </div>
         <div class='submit' v-if='!isStranger'>
             <span class='submit-button' @click='submit'>
-                先放到福林桌子上！
+                贴到留言墙！
             </span>
         </div>
     </div>

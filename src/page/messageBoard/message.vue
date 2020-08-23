@@ -2,8 +2,8 @@
     <div class='message-board'>
         <div class='board'>
             <div class='container'>
-                <div v-for='(item, index) in messageList' :key="'paper' + index" class='tray'>
-                    <div :class="'message ' + item.class" @click='checkMessage(item)' :style="(message === item ?'opacity:0;':'') + 'transform: rotate('+item.deg +'deg); z-index:'+ index +''">
+                <div v-for='(item, index) in messageList' :key="'paper' + index" class='tray' :style="'position: relative;z-index:'+(999- index * 50)">
+                    <div :class="'message ' + item.class" @click='checkMessage(item)' :style="(message === item ?'opacity:0;':'') + 'transform: rotate('+item.deg +'deg); z-index:'+ (999 - index * 50) +''">
                         <div class='text-content'>
                         <p class='text' v-html="item.text"></p>
                         <p class='info'>于{{_getTime(new Date(item.date).valueOf(),'yyyy年MM月dd日')}}</p>
@@ -36,6 +36,7 @@ export default {
             messageList:[],
             message: {},
             maskShow: false, 
+            usePhone: false,
         }
     },
     computed:{
@@ -43,6 +44,9 @@ export default {
     mounted(){
         this.getAllMessage()
         console.log(this._getTime(new Date().valueOf(),'yyyy年MM月dd日'))
+        if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+            this.usePhone = true
+        }
     },
     methods:{
         getAllMessage(){
@@ -59,8 +63,9 @@ export default {
                         deg,
                     }
                 })
-                if(list.length > 11){
-                    list = list.slice(0,12)
+                let count = this.usePhone? 11 : 15
+                if(list.length > count){
+                    list = list.slice(0,count+1)
                 }
                 this.messageList = list
             })
@@ -94,6 +99,7 @@ export default {
             .tray{
                 display: inline-block;
                 transition: all 1s;
+                height: 150px;
                 .message{
                     cursor: pointer;
                     display: inline-block;
@@ -228,7 +234,7 @@ export default {
                 margin: 150px 0px 0px 0px;
                 height: calc(100% - 150px);
                 .tray{
-                    height: 80px;
+                    height: 90px;
                     .message{
                         width: 150px;
                         height: 150px;

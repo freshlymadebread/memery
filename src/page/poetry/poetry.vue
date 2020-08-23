@@ -1,6 +1,6 @@
 <template>
     <div class='poetry'>
-    <el-carousel :interval="4000" :type="'card'" height="600px" class='carousel'  :direction="usePhone?'vertical' : 'horizontal'" >
+    <el-carousel :interval="4000" :type="'card'" height="600px" class='carousel'  :direction="usePhone?'vertical' : 'horizontal'" :autoplay='false'>
         <el-carousel-item :class="'poetry-item ' + item.class" v-for="(item, index) in poetryList" :key="'item'+index">
             <div style="margin-top:-40px;max-width:80%;">
                 <h3 class="medium">{{ item.name }}</h3>
@@ -82,9 +82,14 @@ export default {
     overflow: visible;
     .carousel{
         overflow: visible;
+        
         .poetry-item{
             overflow: visible;
             user-select: none;
+            .medium{
+                font-size: 40px;
+                line-height: 50px;
+            }
             .poetry-content{
                 word-break: break-all;
                 white-space: pre-wrap;
@@ -99,23 +104,23 @@ export default {
         
         .poetry1{
             background: url('../../assets/poetry/poetry1.png');
-            background-size: 100% 100%;
-            height: 50%;
+            background-size: cover;
+            height: 75%;
         }
         .poetry2{
             background: url('../../assets/poetry/poetry2.png');
             background-size: 100% 100%;
-            height: 50%;
+            height: 75%;
         }
         .poetry3{
             background: url('../../assets/poetry/poetry3.png');
             background-size: 100% 100%;
-            height: 80%;
+            height: 100%;
         }
         .poetry4{
             background: url('../../assets/poetry/poetry4.png');
             background-size: 100% 100%;
-            height: 80%;
+            height: 100%;
         }
     }
 }
@@ -140,6 +145,26 @@ export default {
                 .el-carousel__mask{
                     background: transparent;
                 }
+            }
+            .poetry1{
+                background: url('../../assets/poetry/poetry1.png');
+                background-size: 100% 100%;
+                height: 50%;
+            }
+            .poetry2{
+                background: url('../../assets/poetry/poetry2.png');
+                background-size: 100% 100%;
+                height: 50%;
+            }
+            .poetry3{
+                background: url('../../assets/poetry/poetry3.png');
+                background-size: 100% 100%;
+                height: 90%;
+            }
+            .poetry4{
+                background: url('../../assets/poetry/poetry4.png');
+                background-size: 100% 100%;
+                height: 90%;
             }
         }
     }

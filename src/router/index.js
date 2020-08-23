@@ -30,7 +30,7 @@ export default new Router({
     redirect: '/index/welcome',
     meta:{
       requiresAuth: true,
-      name: '首页',
+      name: 'Flying',
       hidden: false
     },
     children:[{
