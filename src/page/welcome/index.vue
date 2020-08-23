@@ -157,6 +157,51 @@ export default {
         }
     }
 }
+
+@media screen and (max-width: 800px) {
+    .welcome{
+        flex-direction: column;
+        align-items: flex-end;
+        .main{
+            width: 100%;
+            background: url('../../assets/paperjust.png');
+            background-size: 100% 100%;
+            max-height: 50%;
+            min-height: 50%;
+            padding-top: 10px;
+            .content{
+                font-size: 16px;
+                line-height: 16px;
+                text-align: left;
+                padding-left: 40px;
+                padding-right: 10px;
+                text-indent: 2em;
+            }
+        }
+        .tips{
+            width: 60%;
+            max-height: 40%;
+            min-height: 50%;
+            background: url('../../assets/tips.png');
+            background-size: 100% 100%;
+            // background-color: #eee;
+            font-size: 12px;
+            .contanier{
+                padding: 40px 15px 3px 22px;
+            }
+            .submit{
+                padding-left: 50px;
+                text-align: left;
+                .submit-button{
+            font-size: 12px;
+                    transition: all 0.5s;
+                    cursor: pointer;
+                    user-select: none;
+                }
+            }
+        }
+    }
+}
 </style>
 <style lang="less">
 .welcome{
@@ -174,6 +219,20 @@ export default {
             background: transparent;
         }
     }
+}
+
+@media screen and (max-width: 800px) {
+.welcome{
+    .my-input{
+        textarea{
+            font-size: 14px;
+            
+        }
+        .el-input__count{
+            background: transparent;
+        }
+    }
+}
 }
 .el-message__content{
     font-size: 24px;

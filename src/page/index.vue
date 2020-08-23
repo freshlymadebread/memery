@@ -33,6 +33,11 @@ export default {
         height: calc(100% - 150px);
     }
 }
+@media screen and (max-width: 800px) {
+    .main-container{
+        background-size: cover;
+    }
+}
 .fade-enter{
     opacity: 0;
 }
