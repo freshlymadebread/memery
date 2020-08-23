@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
-    <div class='loading-mark' v-if='!finish || true'>
+    <div class='loading-mark' v-if='!finish'>
       <p>
         正在路上！
         <i class="el-icon-loading"></i>
@@ -70,7 +70,7 @@ body{
 }
 #app {
   text-align: center;
-  color: #2c3e50;
+  color: #000;
   /* background-color: #000; */
   background-image: radial-gradient( #333,#000);
   height: 100%;
