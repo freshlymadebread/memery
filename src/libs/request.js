@@ -20,6 +20,7 @@ const Request = function (options) {
         let axiosParams = {
             url: headerUrl + options.url,
             method: options.method,
+            headers: {"content-type":"charset=utf-8"}
         }
         if (options.method == 'get') {
             axiosParams.params = {

@@ -64,7 +64,7 @@ export default {
                 url: '/entry',
                 method: 'get',
                 params:{
-                    name: this.name
+                    name:encodeURI(encodeURI(this.name))
                 }
             })
             SessionStorage.set('account',this.name)
