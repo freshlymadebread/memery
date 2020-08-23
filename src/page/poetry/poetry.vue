@@ -29,7 +29,7 @@ export default {
             }).then(resp=>{
                 this.poetryList = resp.data.poetryList.map(item => {
                     let random = Math.floor(Math.random()*2)
-                    let num = (this.getLnNum(item.content)> 7 ? 3 : 1) + random
+                    let num = ((this.getLnNum(item.content)> 7 && !this.usePhone) ? 3 : 1) + random
                     return {
                         ...item,
                         class: 'poetry' + num 

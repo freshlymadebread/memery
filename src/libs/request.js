@@ -17,11 +17,11 @@ axios.interceptors.response.use(function (response) {
 const Request = function (options) {
     return new Promise((resolve, reject) => {
         let headerUrl = 'http://123.56.56.250:3000'
-         headerUrl = ''
+        //  headerUrl = ''
         let axiosParams = {
             url: headerUrl + options.url,
             method: options.method,
-            headers: {"content-type":"charset=utf-8"}
+            // headers: {"content-type":"charset=utf-8"}
         }
         if (options.method == 'get') {
             axiosParams.params = {
