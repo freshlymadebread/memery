@@ -36,6 +36,9 @@ export default {
 @media screen and (max-width: 800px) {
     .main-container{
         background-size: cover;
+        .container{
+            overflow: visible;
+        }
     }
 }
 .fade-enter{

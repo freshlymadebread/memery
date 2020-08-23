@@ -1,6 +1,6 @@
 <template>
     <div class='poetry'>
-    <el-carousel :interval="4000" :type="usePhone ? '' : 'card'" height="600px" class='carousel'>
+    <el-carousel :interval="4000" :type="'card'" height="600px" class='carousel'  :direction="usePhone?'vertical' : 'horizontal'" >
         <el-carousel-item :class="'poetry-item ' + item.class" v-for="(item, index) in poetryList" :key="'item'+index">
             <div style="margin-top:-40px;max-width:80%;">
                 <h3 class="medium">{{ item.name }}</h3>
@@ -79,9 +79,11 @@ export default {
 </style>
 <style lang='less'>
 .poetry{
+    overflow: visible;
     .carousel{
-        overflow: hidden;
+        overflow: visible;
         .poetry-item{
+            overflow: visible;
             user-select: none;
             .poetry-content{
                 word-break: break-all;
@@ -98,18 +100,47 @@ export default {
         .poetry1{
             background: url('../../assets/poetry/poetry1.png');
             background-size: 100% 100%;
+            height: 50%;
         }
         .poetry2{
             background: url('../../assets/poetry/poetry2.png');
             background-size: 100% 100%;
+            height: 50%;
         }
         .poetry3{
             background: url('../../assets/poetry/poetry3.png');
             background-size: 100% 100%;
+            height: 80%;
         }
         .poetry4{
             background: url('../../assets/poetry/poetry4.png');
             background-size: 100% 100%;
+            height: 80%;
+        }
+    }
+}
+@media screen and (max-width: 800px) {
+    .poetry{
+        .carousel{
+            overflow: visible;
+            .poetry-item{
+                width: 100%;
+                user-select: none;
+                .medium{
+                    font-size: 24px;
+                    line-height: 30px;
+                }
+                .poetry-content{
+                    word-break: break-all;
+                    white-space: pre-wrap;
+                    word-spacing: normal;
+                    font-size: 14px;
+                    line-height: 14px;
+                }
+                .el-carousel__mask{
+                    background: transparent;
+                }
+            }
         }
     }
 }
