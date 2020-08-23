@@ -21,7 +21,7 @@
             </p>
             <p class='entry'>
                 <span  @click.stop='entry'>
-                    点击进入
+                    敲门进入
                 </span>
             </p>
         </div>
@@ -29,6 +29,7 @@
 </template>
 <script>
 import { SessionStorage } from 'wii-fe-utils'
+import Request from '@/libs/request'
 export default {
     name: 'Login',
     data(){
@@ -59,6 +60,13 @@ export default {
             },2000)
         },
         entry(){
+            Request({
+                url: '/entry',
+                method: 'get',
+                params:{
+                    name: this.name
+                }
+            })
             SessionStorage.set('account',this.name)
             this.$router.push({
                 name: 'Index'
