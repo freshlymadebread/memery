@@ -81,7 +81,7 @@ export default {
   background: transparent;
   .menu-item{    
     z-index: 999;
-    margin: 50px;
+    margin: 1%;
     user-select: none;
     cursor: pointer;
     color: #fff;
@@ -117,10 +117,43 @@ export default {
     background-image: url('../../assets/sign/sign3.png');
   }
   .menu-item:hover{
-    transform: rotateX(20deg)  rotateY(-20deg)  translateY(-20px);
+    transform: rotateX(20deg)  rotateY(-20deg)  translateY(-10px);
   }
   .active-menu{
     transform: translateY(0px);
+  }
+}
+@media screen and (max-width: 800px) {
+  .page-header{
+    height: 100px;
+    .menu-item{    
+      z-index: 999;
+      margin: 1%;
+      user-select: none;
+      cursor: pointer;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 100px;
+      background-image: url('../../assets/sign/sign0.png');
+      background-size: 100% 100%;
+      transition:all 0.5s ease-in-out;
+      transform-origin: 100% 0%;
+      transform: translateY(-20px);
+      span{
+        font-size: 28px;
+        color: #631d1d;
+        text-shadow: 1px 1px 4px #dedede;
+      }
+    }
+    .menu-item:hover{
+      transform: rotateX(20deg)  rotateY(-20deg)  translateY(-10px);
+    }
+    .active-menu{
+      transform: translateY(0px);
+    }
   }
 }
 </style>

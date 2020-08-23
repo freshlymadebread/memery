@@ -1,6 +1,6 @@
 <template>
     <div class='poetry'>
-    <el-carousel :interval="4000" type="card" height="600px" class='carousel'>
+    <el-carousel :interval="4000" :type="usePhone ? '' : 'card'" height="600px" class='carousel'>
         <el-carousel-item :class="'poetry-item ' + item.class" v-for="(item, index) in poetryList" :key="'item'+index">
             <div style="margin-top:-40px;max-width:80%;">
                 <h3 class="medium">{{ item.name }}</h3>
@@ -17,7 +17,8 @@ export default {
     name: 'Poetry',
     data(){
         return {
-            poetryList:  []
+            poetryList:  [],
+            usePhone: false,
         }
     },
     methods:{
@@ -46,6 +47,9 @@ export default {
     },
     mounted(){
         this.getAllPoetry()
+        if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+            this.usePhone = true
+        }
     }
 }
 </script>
