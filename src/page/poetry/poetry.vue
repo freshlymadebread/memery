@@ -13,12 +13,14 @@
 </template>
 <script>
 import Request from '@/libs/request'
+import { SessionStorage } from 'wii-fe-utils'
 export default {
     name: 'Poetry',
     data(){
         return {
             poetryList:  [],
             usePhone: false,
+            name: SessionStorage.get('account')
         }
     },
     methods:{
@@ -26,6 +28,9 @@ export default {
             Request({
                 url: '/poetry/getAll',
                 method: 'post',
+                params:{
+                    name: this.name
+                }
             }).then(resp=>{
                 this.poetryList = resp.data.poetryList.map(item => {
                     let random = Math.floor(Math.random()*2)
@@ -95,7 +100,7 @@ export default {
                 white-space: pre-wrap;
                 word-spacing: normal;
                 font-size: 30px;
-                line-height: 20px;
+                line-height: 30px;
             }
             .el-carousel__mask{
                 background: transparent;
