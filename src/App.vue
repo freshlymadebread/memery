@@ -43,7 +43,7 @@ export default {
   mounted(){
     let indexTimer = setInterval(_=>{
       this.index = this.getRandomIndex()
-    },2000)
+    },3000)
     let timer = setInterval(() => {
         console.log(document.readyState)
         if (document.readyState === 'complete') {
@@ -80,6 +80,7 @@ body{
   align-items: center;
 }
 .loading-mark{
+  z-index: 9999999;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -93,10 +94,21 @@ body{
   font-size: 50px;
   font-weight: bolder;
   color: #fff;
+  padding: auto 10px;
   p{
     font-weight: 300;
     span{
       font-size: 28px;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .loading-mark{
+    font-size: 25px;
+    p{
+      span{
+        font-size: 14px;
+      }
     }
   }
 }
