@@ -5,6 +5,7 @@ import Index from '@/page/index'
 import Welcome from '@/page/welcome/index'
 import Poetry from './poetry'
 import MessageBoard from '@/page/messageBoard/message'
+import Code from '@/page/code/code'
 Vue.use(Router)
 
 export default new Router({
@@ -50,6 +51,15 @@ export default new Router({
         meta:{
           requiresAuth: true,
           name: '留言',
+          hidden: false
+      }},
+      {
+        path: 'code',
+        name: 'Code',
+        component: Code,
+        meta:{
+          requiresAuth: true,
+          name: 'CODE',
           hidden: false
       }},
     ]
