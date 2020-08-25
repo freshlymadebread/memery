@@ -8,7 +8,7 @@
             说真的，你这名字真好听！
         </p>
         <p class='content'>
-            知道这儿的人真不多！你能来这儿说明你是他们两个很好的朋友了！
+            {{content}}
         </p>
         <p class='content' v-if='time'>
             对啦！他们俩在一起{{time}}啦！
@@ -38,6 +38,7 @@ export default {
             newTime: undefined,
             oldTime: undefined,
             _timer: undefined,
+            content: '',
         }
     },
     computed:{
@@ -73,6 +74,7 @@ export default {
                 let  date = res.data
                 this.oldTime = date.oldTime
                 this.newTime = date.nowTime
+                this.content = date.content
                 this._timer = setInterval(_=>{
                     this.newTime += 1000
                 },1000)
