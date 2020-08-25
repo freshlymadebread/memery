@@ -11,7 +11,7 @@
             {{content}}
         </p>
         <p class='content' v-if='time'>
-            对啦！他们俩在一起{{time}}啦！
+            一个神秘的计数器《{{time}}》！
         </p>
     </div>
     <div class='tips'>
