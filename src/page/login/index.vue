@@ -4,21 +4,22 @@
             <div class='spot' v-for="item in spotList" :key='item.clientX' :class='item.pic' :style="'top:' + item.y + 'px;left:' + item.x +'px;'"></div>
             <p  @click.stop >
                 <span>
-                    亲爱的<div style='display:inline-block'>
+                    你好，<div style='display:inline-block'>
                         <input type="text" :style="'width:' + (this.name.length * 27) + 'px'"  v-model="name">
                     </div>:
                 </span>
             </p>
-            <p class='para'>
-                <span>
-                    欢迎来到fulin与里溜溜赢的专属地盘！
-                </span>
-            </p>
-            <p class='para'>
-                <span>
-                    这里有很多狗粮，别被甜到啦！
-                </span>
-            </p>
+            <div style='display: flex;align-items: center;justify-content: center;'>
+                <p  class='para'>
+           秋夕
+        唐·杜牧
+    银烛秋光冷画屏，
+    轻罗小扇扑流萤。
+    天阶夜色凉如水，
+    坐看牵牛织女星。
+                </p>
+            </div>
+            
             <p class='entry'>
                 <span  @click.stop='entry'>
                     敲门进入
@@ -109,11 +110,13 @@ export default {
             }
         }
         .para{
-            text-indent: 2em;
+            font-size: 20px;
+            word-break: break-all;
+            white-space: pre;
         }
         .entry{
             text-align: center;
-            padding-top: 10px;
+            margin-top: 0;
             span{
                 cursor:pointer;
             }
