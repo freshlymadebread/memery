@@ -6,6 +6,7 @@ import Welcome from '@/page/welcome/index'
 import Poetry from './poetry'
 import MessageBoard from '@/page/messageBoard/message'
 import Code from '@/page/code/code'
+import Secret from '@/page/secret/secret'
 Vue.use(Router)
 
 export default new Router({
@@ -14,10 +15,18 @@ export default new Router({
     redirect: '/login',
     name: 'default',
     meta:{
-      requiresAuth: true,
+      requiresAuth: false,
       hidden: true
     },
-   },{
+   },
+   {
+     path: '/secret',
+     name: 'Secret',
+     component: Secret,
+     meta:{
+       name: 'secret',
+       hidden: false
+   }},{
     path: '/login',
     name: 'default',
     component: Login,
