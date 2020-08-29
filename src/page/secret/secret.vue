@@ -149,7 +149,10 @@ export default {
 }
 
 @media screen and (max-width: 640px){
-
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
     .m_formList .dplugin-box {
         background-color: #fff;
         padding: 13px 15px;
