@@ -2,7 +2,7 @@
   <div id="app">
     <router-view/>
     <div class='loading-mark' v-if='!finish'>
-      <p>
+      <p v-if='!true'> 
         正在路上！
         <i class="el-icon-loading"></i>
         <br>
@@ -86,8 +86,8 @@ body{
   bottom: 0;
   left: 0;
   right: 0;
-  background: #555;
-  opacity: 0.9;
+  background: #fff;
+  opacity: 1;
   display: flex;
   align-items: center;
   justify-content: center;
